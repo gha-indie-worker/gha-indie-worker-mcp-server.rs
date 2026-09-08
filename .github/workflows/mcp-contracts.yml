@@ -22,7 +22,7 @@ jobs:
           toolchain: 1.95.0
       # Verify independent peer authorities before exercising the real worker MCP.
       # No workflow mutation or remote product tools are called by this gate.
-      - uses: ORESoftware/org-mcp-server-template.rs/.github/actions/mcp-contracts@1435a315c14259db6ad97492e88b373d4b5acbed
+      - uses: ORESoftware/org-mcp-server-template.rs/.github/actions/mcp-contracts@a1648e79ce7e8fcadbcc1a822a71d2c43b44a039
         with:
           binary: gha-indie-worker-mcp-server
           profile: fleet-v2
