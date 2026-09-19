@@ -1,16 +1,21 @@
 protocol = "ores.lru-config.v1"
-namespace = "gha-indie-worker-mcp-server.rs"
+namespace = "gha-indie-worker-mcp-server"
 roles = ["server"]
 
 [redis]
 urlEnv = "REDIS_URL"
-keyPrefix = "ores:lru:v1:gha-indie-worker-mcp-server.rs"
-pubsubChannel = "ores:lru:v1:gha-indie-worker-mcp-server.rs:events"
+keyPrefix = "ores:lru:v1:gha-indie-worker-mcp-server"
+pubsubChannel = "ores:lru:v1:gha-indie-worker-mcp-server:events"
 reconcileIntervalMs = 180000
 reconnectMinMs = 1000
 reconnectMaxMs = 30000
 
 [defaults]
-capacity = 1024
+capacity = 512
 syncMode = "read_only"
 overflowMode = "reject_and_reconcile"
+failOpenOnStartup = false
+
+[[caches]]
+name = "runtime-env"
+role = "server"
