@@ -1,0 +1,11 @@
+schema_version: ores.compose.v1
+project: gha-indie-worker-mcp-server
+allow_lazy_start: false
+
+services:
+  gha-indie-worker-mcp-server:
+    name: gha-indie-worker-mcp-server
+    runtime: host
+    build:
+      - ["cargo", "build", "--bins"]
+    command: ["./target/debug/gha-indie-worker-mcp-server.rs"]
